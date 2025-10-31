@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://example.greenhouse.io/jobs/123456",
+    "company": "Example Corp",
+    "position": "Software Engineer"
+  },
+  {
+    "url": "https://example.ashby.io/jobs/789012",
+    "company": "Tech Startup",
+    "position": "Full Stack Developer"
+  },
+  {
+    "url": "https://another-company.greenhouse.io/jobs/345678",
+    "company": "Another Company",
+    "position": "Junior Developer"
+  }
+]
