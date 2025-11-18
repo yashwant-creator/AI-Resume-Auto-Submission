@@ -6,6 +6,8 @@ export default function App() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [linkedin, setLinkedin] = useState('')
+  const [website, setWebsite] = useState('')
   const [resume, setResume] = useState(null)
   const [log, setLog] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -42,6 +44,8 @@ export default function App() {
     fd.append('name', name.trim())
     fd.append('email', email.trim())
     fd.append('phone', phone.trim())
+    fd.append('linkedin', linkedin.trim())
+    fd.append('website', website.trim())
     fd.append('resume', resume)
 
     setLoading(true)
@@ -78,6 +82,8 @@ export default function App() {
     setName('')
     setEmail('')
     setPhone('')
+    setLinkedin('')
+    setWebsite('')
     setResume(null)
     setLog(null)
     setError('')
@@ -163,6 +169,30 @@ export default function App() {
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
                   placeholder="(555) 123-4567"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="linkedin">LinkedIn</label>
+                <input
+                  id="linkedin"
+                  type="url"
+                  value={linkedin}
+                  onChange={e => setLinkedin(e.target.value)}
+                  placeholder="https://linkedin.com/in/yourprofile"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="website">Website/Portfolio</label>
+                <input
+                  id="website"
+                  type="url"
+                  value={website}
+                  onChange={e => setWebsite(e.target.value)}
+                  placeholder="https://yourwebsite.com"
                   disabled={loading}
                 />
               </div>

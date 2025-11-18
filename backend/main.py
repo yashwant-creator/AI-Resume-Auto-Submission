@@ -46,16 +46,20 @@ async def submit(
     name: str = Form(default=""),
     email: str = Form(default=""),
     phone: str = Form(default=""),
+    linkedin: str = Form(default=""),
+    website: str = Form(default=""),
     resume: UploadFile = File(...),
 ):
     """
-    Submit a job application with resume.
+    Submit a job application with resume to real ATS platforms.
     
     Args:
-        job_url: URL of the job posting
+        job_url: URL of the job posting (Greenhouse, Lever, Ashby, etc.)
         name: Applicant name (optional)
         email: Applicant email (optional)
         phone: Applicant phone (optional)
+        linkedin: LinkedIn profile URL (optional)
+        website: Personal website/portfolio URL (optional)
         resume: Resume PDF file
     
     Returns:
@@ -92,7 +96,9 @@ async def submit(
         fields = {
             "name": (name or "").strip(),
             "email": (email or "").strip(),
-            "phone": (phone or "").strip()
+            "phone": (phone or "").strip(),
+            "linkedin": (linkedin or "").strip(),
+            "website": (website or "").strip()
         }
         
         # Run submission in thread pool (Playwright sync API needs to be in a thread)
